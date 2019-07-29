@@ -13,6 +13,7 @@ internals.scrape = (targetUrl) => {
      
     rp(options)
         .then(function ($) {
+            console.log('Amazon scrape result:');
             console.log($.html());
         })
         .catch(function (err) {

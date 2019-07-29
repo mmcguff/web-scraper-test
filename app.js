@@ -3,12 +3,9 @@ const amazon = require('./routes/amazon');
 const urbanOutfitters = require('./routes/urban-outfitters');
 
 (async () =>{
-    console.log('Reddit scrape result:');
-    await reddit.init();
-    await reddit.close(); 
-
-    console.log('Amazon scrape result:')
+    
+    await reddit.scrape('https://old.reddit.com');
     await amazon.scrape('https://www.amazon.com/gp/product/B01DXI33T0');
-    //Very helpful for seeing that the objects collected from your scrap are what you expect. 
-    //debugger;  
+    await urbanOutfitters.scrape('https://www.urbanoutfitters.com/shop/uo-corduroy-hooded-cropped-jacket?category=jackets-coats-for-women&color=081&type=REGULAR');
+    //debugger; 
 })();
