@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
-
-const URL = 'https://hackernoon.com/';
+//The old url renders things in a way that is more easily scraped if we need to get individual elements. 
+const baseUrl = 'https://www.old.reddit.com'; 
+let html = '';
 
 const self = {
     browser: null,
@@ -8,11 +9,15 @@ const self = {
 
     init: async () => {
         self.browser = await puppeteer.launch({
-            headless: false
+            //headless: false
         });
         self.page = await self.browser.newPage();
 
-        await self.page.goto(URL, {waituntil: 'networkidle0'});
+        await self.page.goto(baseUrl, {waituntil: 'networkidle0'});
+
+        //most basic implemenation
+        html = await self.page.content();
+        console.log(html);
     },
 
     close: async () => {
