@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 //The old url renders things in a way that is more easily scraped if we need to get individual elements. 
-const baseUrl = 'https://www.old.reddit.com'; 
+const baseUrl = 'https://old.reddit.com'; 
 let html = '';
 
 const self = {
@@ -18,6 +18,8 @@ const self = {
         //most basic implemenation
         html = await self.page.content();
         console.log(html);
+
+        //transformation to get the desired elements would go here
     },
 
     close: async () => {
