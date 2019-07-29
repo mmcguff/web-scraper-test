@@ -1,0 +1,14 @@
+{
+  "name": "web-scraper-test",
+  "version": "1.0.0",
+  "description": "This project will contain three different web scraper for reddit, amazon and urbanoutfitters.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew McGuff",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^1.19.0"
+  }
+}
